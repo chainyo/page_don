@@ -1,0 +1,29 @@
+html {
+    background-color: black;
+}
+
+body {
+    background-color: black;
+    max-height: 800px;
+}
+
+button {
+    margin-top: 25px;
+}
+
+li {
+    font-size: 18px;
+    margin-right: 20px;
+    color: black;
+}
+
+.btn {
+    margin-top: 100px;
+    margin-right: 8px;
+    font-size: 28px;
+}
+
+#logo {
+    width: 55%;
+    margin-top: 50px;
+}

@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/contrib_style.css')}}">
+{% endblock %}
+
+{% block title %} Contributors {% endblock %}
+
+{% block content %}
+    <div class='margin'></div>
+    <div class='container-fluid intersect'></div>
+    <div class='container-fluid top-donators'>
+        <div class='container text-center'>
+            <span class='badge rounded-pill bg-light title'>TOP DONATORS</span>
+        </div>
+        <div class='row'>
+            {% for t in top[:3] %}
+                <div class='col-sm-4'>
+                    <h3 class='top-3'>{{t['forname']}} {{t['name']}} <span class='badge bg-warning don'>{{t['donate']}} €</span></h3>
+                </div>
+            {% endfor %}
+            {% for t in top[3:] %}
+            <div class='col-sm-4'>
+                <h3 class='top-7'>{{t['forname']}} {{t['name']}} <span class='badge bg-warning don'>{{t['donate']}} €</span></h3>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+    <div class='margin'></div>
+    <div class='container-fluid intersect'></div>
+    <div class='container-fluid donators'>
+        <div class='container text-center'>
+            <span class='badge rounded-pill bg-light title'>ALL TIME DONATORS</span>
+        </div>
+        <div class='row'>
+            {% for d in don %}
+            <div class='col-sm-3 indi-don text-center'>
+                <span class='badge align-middle text-left indi-badge'>{{d['name']}} {{d['forname']}}<span class='badge badge-light float-right inner-badge'>{{d['donate']}} €</span></span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class='margin'></div>
+    <div class='container-fluid intersect'></div>
+    <div class='margin'></div>
+    <div class='container-fluid text-center'>
+        <h3 class='space-text'>We need <span class='badge badge-secondary rounded-pill bold-txt'>YOU</span> to keep the donation train running!</h3>
+        <iframe style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="1080" height="720" src="https://charts.mongodb.com/charts-kata-gjtcn/embed/charts?id=d25ad65a-90d3-496f-a68d-a08f3ce3a6f0&autoRefresh=3600&theme=light"></iframe>
+    </div>
+    <div class='container-fluid text-center footer'>
+        <h3>Already <span class='badge badge-secondary rounded-pill int'>{{don|length}}</span> lovely people have supported us!</h3>
+        <h3>Why not you?</h3>
+        <a href="{{ url_for('form')}}" class='btn btn-outline-light btn-lg' id='don'>DONATE</a>
+    </div>
+    <div class='margin'></div>
+    <div class='container-fluid intersect'></div>
+    <div class='margin'></div>
+{% endblock %}

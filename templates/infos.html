@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/infos_style.css')}}">
+{% endblock %}
+
+{% block title %} Who we are? {% endblock %}
+
+{% block content %}
+<div class='container-fluid text-center'>
+    <h2>WHO ARE WE?</h2>
+    <p class='text-center'>
+        Since 1973, WWF France has acted on a daily basis to offer future generations a living planet.
+        We are working to stop environmental degradation and build a future where humans live in harmony with nature.
+    </p>
+    <p>
+        The World Wide Fund for Nature (WWF) is one of the very first independent environmental protection organizations in the world, with an active network in more than 100 countries and supported by almost 6 million members. 
+        WWF France, a recognized public utility foundation, works for a living planet from Paris, Marseille, the Alps, Guyana and New Caledonia.
+    </p>
+</div>
+<div class='container-fluid text-center video'>
+    <h3>To understand our actions:</h3>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/kxIamlOdZeg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class='container-fluid text-center'>
+    <a href="{{ url_for('form')}}" class='btn btn-outline-light btn-lg' id='don'>DONATE</a>
+</div>
+{% endblock %}

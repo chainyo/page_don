@@ -1,0 +1,19 @@
+html {
+    background-color: black;
+}
+
+body {
+    background-color: black;
+    color: white;
+    margin: 0 auto;
+}
+
+.text-center {
+    margin-bottom: 25px;
+    margin-top: 50px;
+}
+
+.inputs {
+    margin-top: 50px;
+    max-width: 50%;
+}

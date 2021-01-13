@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/form_style.css')}}">
+{% endblock %}
+
+{% block title %} Donate {% endblock %}
+
+{% block content %}
+    <div class='container-fluid'>
+        <div class="container-fluid text-center">
+            <h1>DONATION FORM</h1>
+            <h2>Feel free to donate what you want</h2>
+        </div>
+        <div class='container-fluid inputs'>
+            <form method="post">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" value="{{request.form['name']}}">
+                </div>
+                <div class="mb-3">
+                    <label for="forname" class="form-label">Forname</label>
+                    <input type="text" class="form-control" id="forname" name="forname" value="{{request.form['forname']}}">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" value="{{request.form['email']}}">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="donate" class="form-label">Contribution ( euros € )</label>
+                    <input type="number" class="form-control" id="donate" name="donate" value="{{request.form['donate']}}">
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="check" required>
+                    <label class="form-check-label" for="check">I agree to give to WWF</label>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-outline-light text-center subbtn">Submit</button>
+                </div>
+            </form>
+    </div>
+{% endblock %}
