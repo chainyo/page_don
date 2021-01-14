@@ -35,7 +35,10 @@ def form():
 def contributors():
     top = DB.get_top()
     don = DB.get_don()
-    return render_template('contrib.html', top=top, don=don)
+    sum = 0
+    for d in don:
+        sum += int(d['donate'])
+    return render_template('contrib.html', top=top, don=don, sum=sum)
 
 @app.route('/infos')
 def infos():

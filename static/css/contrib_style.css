@@ -4,7 +4,7 @@ html {
 
 body {
     margin: 0 auto;
-    background-color: white;
+    background-color: black;
 }
 
 h2, h3 {
@@ -51,6 +51,28 @@ h2, h3 {
 .bold-txt {
     font-size: 30px;
     font-weight: bold;
+}
+
+.head-goal {
+    margin-top: 25px;
+}
+
+.under-txt {
+    color: wheat;
+}
+
+.progress {
+    width: 50%;
+    min-height: 38px;
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.h3-goal {
+    font-size: 40px;
 }
 
 .margin {
