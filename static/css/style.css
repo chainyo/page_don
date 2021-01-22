@@ -17,6 +17,10 @@ li {
     color: black;
 }
 
+.img {
+    width: 50%;
+}
+
 .btn {
     margin-top: 100px;
     margin-right: 8px;
