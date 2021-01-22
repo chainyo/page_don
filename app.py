@@ -5,10 +5,12 @@ from werkzeug.exceptions import abort
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'admin'
 
+# Page index
 @app.route('/')
 def index():
     return render_template('index.html')
 
+# Page du formulaire
 @app.route('/form', methods=('GET', 'POST'))
 def form():
     if request.method == 'POST':
@@ -31,6 +33,7 @@ def form():
         
     return render_template('form.html')
 
+# Page des contributeurs
 @app.route('/contributors')
 def contributors():
     top = DB.get_top()
@@ -40,6 +43,7 @@ def contributors():
         sum += int(d['donate'])
     return render_template('contrib.html', top=top, don=don, sum=sum)
 
+# Page des informations de l'association
 @app.route('/infos')
 def infos():
     return render_template('infos.html')

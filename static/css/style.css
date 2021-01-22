@@ -12,9 +12,21 @@ button {
 }
 
 li {
-    font-size: 18px;
+    font-size: 32px;
     margin-right: 20px;
     color: black;
+}
+
+.img-container {
+    margin: 0 auto;
+    height: 500px;
+    width: 800px;
+
+}
+
+.image-nav {
+    width: 50px;
+    height: 50px;
 }
 
 .img {

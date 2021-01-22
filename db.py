@@ -45,7 +45,7 @@ class DB():
         cls.close_con()
         return top[:12]
 
-    # Méthode pour récupérer les donateurs tous
+    # Méthode pour récupérer tous les donateurs
     @classmethod
     def get_don(cls):
         cls.open_con()
